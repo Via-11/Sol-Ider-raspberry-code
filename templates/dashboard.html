@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sol-ider Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<style>
+  /* ── POWER FOOTER BAR ── */
+  /* Fixed at the bottom of the screen, always visible on mobile */
+  .power-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: #fff;
+    border-top: 1.5px solid #EAE5DA;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  }
+
+  .power-footer-label {
+    font-size: 0.72rem;
+    color: #7A7060;
+    margin-right: auto;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-power {
+    padding: 9px 18px;
+    border-radius: 8px;
+    border: 1.5px solid transparent;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-reboot {
+    background: #FFF8EC;
+    border-color: #F5D99A;
+    color: #9A6800;
+  }
+
+  .btn-reboot:hover {
+    background: #F5A623;
+    color: white;
+    border-color: #F5A623;
+  }
+
+  .btn-shutdown {
+    background: #FEECEC;
+    border-color: #F4B8B8;
+    color: #c03030;
+  }
+
+  .btn-shutdown:hover {
+    background: #c03030;
+    color: white;
+    border-color: #c03030;
+  }
+
+  /* Add bottom padding to body so content doesn't hide behind the footer */
+  body {
+    padding-bottom: 64px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="brand">
+      <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="10" fill="#F5A623"/>
+        <g stroke="#F5A623" stroke-width="2.5" stroke-linecap="round">
+          <line x1="24" y1="4"  x2="24" y2="10"/>
+          <line x1="24" y1="38" x2="24" y2="44"/>
+          <line x1="4"  y1="24" x2="10" y2="24"/>
+          <line x1="38" y1="24" x2="44" y2="24"/>
+          <line x1="9.4"  y1="9.4"  x2="13.6" y2="13.6"/>
+          <line x1="34.4" y1="34.4" x2="38.6" y2="38.6"/>
+          <line x1="38.6" y1="9.4"  x2="34.4" y2="13.6"/>
+          <line x1="13.6" y1="34.4" x2="9.4"  y2="38.6"/>
+        </g>
+        <path d="M16 28Q20 20 28 22Q32 18 36 20" stroke="#4A7C59" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <h1>Sol-ider</h1>
+        <span>Solar Food Waste Dehydrator</span>
+      </div>
+    </a>
+
+    <div id="simBadge" class="sim-badge" style="display:none">Simulation Mode</div>
+
+    <div class="header-right">
+      <div class="last-upd">Updated: <span id="lastUpd">-</span></div>
+      <div class="status-pill" id="statusPill">
+        <span class="dot"></span>
+        <span id="statusText">Connecting...</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── TABS ── -->
+<nav class="tab-nav">
+  <button class="tab active" data-tab="live"><span class="tab-icon">📡</span> Live Monitor</button>
+  <button class="tab" data-tab="records"><span class="tab-icon">📋</span> Drying Records</button>
+</nav>
+
+<!-- ══════════ LIVE TAB ══════════ -->
+<section id="tab-live" class="tab-panel active">
+
+  <!-- Active session banner -->
+  <div class="alert-banner" id="dryingBanner" style="display:none">
+    <div class="banner-inner">
+      <div class="banner-icon">🌀</div>
+      <div class="banner-text">
+        <strong>Drying Session In Progress</strong>
+        <span id="bannerThresholds">Monitoring sensors...</span>
+      </div>
+      <div class="banner-meta">
+        <span class="blink-dot"></span>
+        <span id="sessionElapsed">Active</span>
+      </div>
+      <button class="btn-end-session" id="endSessionBtn">Mark as Complete</button>
+    </div>
+  </div>
+
+  <!-- Drying Progress Bar -->
+  <div class="progress-banner" id="progressBanner" style="display:none">
+    <div class="progress-banner-inner">
+      <div class="prog-labels">
+        <span class="prog-title">Moisture Removal Progress</span>
+        <span class="prog-pct" id="progPct">0%</span>
+      </div>
+      <div class="prog-track">
+        <div class="prog-fill" id="progFill" style="width:0%"></div>
+        <div class="prog-target-line" title="80% removal target">
+          <span>80% target</span>
+        </div>
+      </div>
+      <div class="prog-meta">
+        <span>Start: <strong id="progStartW">-</strong> kg</span>
+        <span>Current: <strong id="progCurW">-</strong> kg</span>
+        <span>Target: <strong id="progTgtW">-</strong> kg (20% of start)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start session bar -->
+  <div class="start-bar" id="startBar">
+    <div class="start-bar-inner">
+      <div class="start-bar-info">
+        <span class="sb-icon">⚖</span>
+        <div>
+          <strong>No active drying session</strong>
+          <span>Place food waste on the tray, then click Start. The system will auto-detect the weight and set drying targets.</span>
+        </div>
+      </div>
+      <button class="btn-start-session" id="startSessionBtn">▶ Start Drying Session</button>
+    </div>
+  </div>
+
+  <!-- Sensor Cards -->
+  <div class="sensor-grid">
+
+    <!-- Temperature -->
+    <div class="scard scard-temp">
+      <div class="scard-top">
+        <div class="scard-label">Temperature</div>
+        <div class="scard-badge temp-badge">DHT22 × 2</div>
+      </div>
+      <div class="scard-main">
+        <div class="scard-value" id="tempAvg">-</div>
+        <div class="scard-unit">°C avg</div>
+      </div>
+      <div class="scard-sub-row">
+        <div class="scard-sub">
+          <span class="sub-label">Sensor A</span>
+          <span class="sub-val" id="temp1">-</span>°C
+        </div>
+        <div class="sub-sep"></div>
+        <div class="scard-sub">
+          <span class="sub-label">Sensor B</span>
+          <span class="sub-val" id="temp2">-</span>°C
+        </div>
+      </div>
+      <div class="scard-track">
+        <div class="scard-fill temp-fill" id="tempFill"></div>
+      </div>
+    </div>
+
+    <!-- Humidity -->
+    <div class="scard scard-hum">
+      <div class="scard-top">
+        <div class="scard-label">Humidity</div>
+        <div class="scard-badge hum-badge">DHT22 × 2</div>
+      </div>
+      <div class="scard-main">
+        <div class="scard-value" id="humAvg">-</div>
+        <div class="scard-unit">% RH avg</div>
+      </div>
+      <div class="scard-sub-row">
+        <div class="scard-sub">
+          <span class="sub-label">Sensor A</span>
+          <span class="sub-val" id="hum1">-</span>%
+        </div>
+        <div class="sub-sep"></div>
+        <div class="scard-sub">
+          <span class="sub-label">Sensor B</span>
+          <span class="sub-val" id="hum2">-</span>%
+        </div>
+      </div>
+      <div class="scard-track">
+        <div class="scard-fill hum-fill" id="humFill"></div>
+      </div>
+      <div class="hum-status" id="humStatus"></div>
+    </div>
+
+    <!-- Weight -->
+    <div class="scard scard-weight">
+      <div class="scard-top">
+        <div class="scard-label">Weight</div>
+        <div class="scard-badge weight-badge">HX711 × 4</div>
+      </div>
+      <div class="scard-main">
+        <div class="scard-value" id="weightVal">-</div>
+        <div class="scard-unit">kg</div>
+      </div>
+      <div class="weight-gauge">
+        <div class="gauge-track">
+          <div class="gauge-fill" id="gaugeFill"></div>
+          <div class="gauge-marker gauge-marker-target" id="gaugeTargetMarker" style="display:none">
+            <span id="gaugeTargetLabel">target</span>
+          </div>
+        </div>
+        <div class="gauge-ends">
+          <span>0</span>
+          <span id="gaugeMax">- kg</span>
+        </div>
+      </div>
+      <div class="weight-note" id="weightStatus">-</div>
+    </div>
+
+    <!-- Drying Conditions -->
+    <div class="scard scard-conditions">
+      <div class="scard-top">
+        <div class="scard-label">Drying Conditions</div>
+      </div>
+      <div class="conditions-list">
+        <div class="cond-row">
+          <div class="cond-icon">💧</div>
+          <div class="cond-text">
+            <span class="cond-name">Humidity</span>
+            <span class="cond-target" id="cond-hum-target">-</span>
+            <span class="cond-val" id="cval-hum">-</span>
+          </div>
+          <div class="cond-check" id="ccheck-hum">○</div>
+        </div>
+        <div class="cond-row">
+          <div class="cond-icon">⚖</div>
+          <div class="cond-text">
+            <span class="cond-name">Weight</span>
+            <span class="cond-target" id="cond-weight-target">-</span>
+            <span class="cond-val" id="cval-weight">-</span>
+          </div>
+          <div class="cond-check" id="ccheck-weight">○</div>
+        </div>
+        <div class="cond-divider"></div>
+        <div class="cond-result" id="condResult">
+          <span id="condResultText">Checking conditions...</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Charts -->
+  <div class="charts-row">
+    <div class="chart-card span2">
+      <div class="chart-hdr">
+        <h3>Temperature &amp; Humidity History</h3>
+        <div class="range-group">
+          <button class="rbtn active" data-hours="24">24h</button>
+          <button class="rbtn" data-hours="72">3d</button>
+          <button class="rbtn" data-hours="168">7d</button>
+        </div>
+      </div>
+      <canvas id="envChart" height="180"></canvas>
+    </div>
+    <div class="chart-card">
+      <div class="chart-hdr">
+        <h3>Weight Trend</h3>
+      </div>
+      <canvas id="weightChart" height="180"></canvas>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════ RECORDS TAB ══════════ -->
+<section id="tab-records" class="tab-panel">
+
+  <div class="section-hdr">
+    <div>
+      <h2>Drying Records</h2>
+      <p class="section-sub">Auto-logged when 80% moisture is removed and humidity reaches the batch target</p>
+    </div>
+    <div class="hdr-controls">
+      <select id="recDays" class="sel">
+        <option value="7">Last 7 days</option>
+        <option value="14">Last 14 days</option>
+        <option value="30" selected>Last 30 days</option>
+        <option value="90">Last 90 days</option>
+        <option value="3650">All time</option>
+      </select>
+      <button class="btn-add" id="openModal">+ Add Record</button>
+    </div>
+  </div>
+
+  <!-- Summary strip -->
+  <div class="summary-strip">
+    <div class="sum-card">
+      <span id="s-batches">-</span>
+      <label>Total Batches</label>
+    </div>
+    <div class="sum-card accent">
+      <span id="s-processed">-</span>
+      <label>kg Processed</label>
+    </div>
+    <div class="sum-card accent2">
+      <span id="s-reduced">-</span>
+      <label>kg Reduced</label>
+    </div>
+    <div class="sum-card">
+      <span id="s-pct">-</span>
+      <label>Avg Reduction %</label>
+    </div>
+    <div class="sum-card">
+      <span id="s-dur">-</span>
+      <label>Avg Duration (h)</label>
+    </div>
+    <div class="sum-card">
+      <span id="s-temp">-</span>
+      <label>Avg Temp (°C)</label>
+    </div>
+    <div class="sum-card">
+      <span id="s-hum">-</span>
+      <label>Avg Humidity (%)</label>
+    </div>
+  </div>
+
+  <!-- Records table -->
+  <div class="tbl-wrap">
+    <table class="rec-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Date Completed</th>
+          <th>Start Weight</th>
+          <th>Final Weight</th>
+          <th>Reduced</th>
+          <th>Reduction %</th>
+          <th>Duration</th>
+          <th>Avg Humidity</th>
+          <th>Avg Temp</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody id="recBody">
+        <tr><td colspan="10" class="empty-cell">Loading...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+<!-- ── ADD RECORD MODAL ── -->
+<div class="modal-bg" id="modalBg" style="display:none">
+  <div class="modal">
+    <div class="modal-hdr">
+      <h3>Add Drying Record</h3>
+      <button class="modal-x" id="closeModal">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="frow">
+        <label>Start Time</label>
+        <input type="datetime-local" id="f-start">
+      </div>
+      <div class="frow">
+        <label>End Time</label>
+        <input type="datetime-local" id="f-end">
+      </div>
+      <div class="frow two">
+        <div>
+          <label>Initial Weight (kg)</label>
+          <input type="number" id="f-iw" step="0.001" min="0" placeholder="e.g. 1.000">
+        </div>
+        <div>
+          <label>Final Weight (kg)</label>
+          <input type="number" id="f-fw" step="0.001" min="0" placeholder="e.g. 0.200">
+        </div>
+      </div>
+      <div class="frow" id="reductionPreviewRow" style="display:none">
+        <label>Calculated Reduction</label>
+        <div class="reduction-preview">
+          <span id="reductionPreviewVal">-</span>
+          <span class="rp-sub">kg removed &nbsp;·&nbsp; <span id="reductionPreviewPct">-</span>% moisture removed</span>
+        </div>
+      </div>
+      <div class="frow two">
+        <div>
+          <label>Avg Humidity (%)</label>
+          <input type="number" id="f-hum" step="0.1" placeholder="e.g. 33">
+        </div>
+        <div>
+          <label>Avg Temp (°C)</label>
+          <input type="number" id="f-temp" step="0.1" placeholder="e.g. 42">
+        </div>
+      </div>
+      <div class="frow">
+        <label>Notes (optional)</label>
+        <input type="text" id="f-notes" placeholder="e.g. Sunny day, mixed vegetable scraps">
+      </div>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn-cancel" id="cancelModal">Cancel</button>
+      <button class="btn-save"   id="saveModal">Save Record</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── POWER CONFIRM MODAL ── -->
+<div class="modal-bg" id="powerModalBg" style="display:none">
+  <div class="modal" style="max-width:400px">
+    <div class="modal-hdr">
+      <h3 id="powerModalTitle">Confirm</h3>
+      <button class="modal-x" id="closePowerModal">✕</button>
+    </div>
+    <div class="modal-body">
+      <p id="powerModalMsg" style="font-size:.88rem;color:#7A7060;line-height:1.65"></p>
+      <p style="margin-top:12px;font-size:.8rem;font-weight:600;color:#c03030">
+        ⚠️ Make sure no drying session is active before shutting down.
+      </p>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn-cancel" id="cancelPowerModal">Cancel</button>
+      <button class="btn-power-confirm" id="confirmPowerBtn">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── TOAST ── -->
+<div class="toast" id="toast"></div>
+
+<!-- ── POWER FOOTER BAR ── -->
+<!-- Moved here from header so it's easy to tap on mobile without rotating -->
+<div class="power-footer">
+  <span class="power-footer-label">Raspberry Pi Controls</span>
+  <button class="btn-power btn-reboot"   id="rebootBtn">↺ Restart</button>
+  <button class="btn-power btn-shutdown" id="shutdownBtn">⏻ Shut Down</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+<script>
+// ── DYNAMIC THRESHOLD WIRING ──────────────────────────────────────────────────
+
+(function () {
+
+  function applyDynamicThresholds(d) {
+    const active     = d.drying_in_progress;
+    const startW     = d.session_start_weight   || 0;
+    const tgtW       = d.session_end_weight_target   || (startW * 0.20);
+    const tgtH       = d.session_end_humidity_target || 40;
+    const curW       = d.weight  || 0;
+    const avgH       = ((d.hum1 || 0) + (d.hum2 || 0)) / 2;
+    const progPct    = d.weight_progress_pct || 0;
+
+    // Banner threshold text
+    const bannerThresh = document.getElementById('bannerThresholds');
+    if (bannerThresh) {
+      bannerThresh.textContent = active
+        ? `Monitoring until humidity <= ${tgtH}% RH & weight <= ${tgtW.toFixed(3)} kg`
+        : 'Monitoring sensors...';
+    }
+
+    // Progress bar
+    const progBanner = document.getElementById('progressBanner');
+    const progFill   = document.getElementById('progFill');
+    const progPctEl  = document.getElementById('progPct');
+    const progStartW = document.getElementById('progStartW');
+    const progCurW   = document.getElementById('progCurW');
+    const progTgtW   = document.getElementById('progTgtW');
+
+    if (progBanner) {
+      progBanner.style.display = active ? '' : 'none';
+      if (active) {
+        const pct = Math.min(100, progPct);
+        if (progFill)   progFill.style.width  = pct + '%';
+        if (progPctEl)  progPctEl.textContent  = pct.toFixed(1) + '%';
+        if (progStartW) progStartW.textContent = startW.toFixed(3);
+        if (progCurW)   progCurW.textContent   = curW.toFixed(3);
+        if (progTgtW)   progTgtW.textContent   = tgtW.toFixed(3);
+        if (progFill)   progFill.style.background = pct >= 80 ? '#4A7C59' : '#F5A623';
+      }
+    }
+
+    // Drying Conditions card - dynamic labels
+    const condHumTarget    = document.getElementById('cond-hum-target');
+    const condWeightTarget = document.getElementById('cond-weight-target');
+    if (condHumTarget) {
+      condHumTarget.textContent = active ? `<= ${tgtH}% RH` : '(set when session starts)';
+    }
+    if (condWeightTarget) {
+      condWeightTarget.textContent = active
+        ? `<= ${tgtW.toFixed(3)} kg  (80% moisture removed)`
+        : '(set when session starts)';
+    }
+
+    // Override condition checks with real targets
+    const humMet    = avgH <= tgtH;
+    const weightMet = curW <= tgtW && curW > 0;
+
+    const ccheckHum    = document.getElementById('ccheck-hum');
+    const ccheckWeight = document.getElementById('ccheck-weight');
+    if (ccheckHum)    ccheckHum.textContent    = humMet    ? 'OK' : 'o';
+    if (ccheckWeight) ccheckWeight.textContent = weightMet ? 'OK' : 'o';
+    if (ccheckHum)    ccheckHum.className       = 'cond-check' + (humMet    ? ' met' : '');
+    if (ccheckWeight) ccheckWeight.className    = 'cond-check' + (weightMet ? ' met' : '');
+
+    const condResultText = document.getElementById('condResultText');
+    const condResult     = document.getElementById('condResult');
+    if (condResultText && condResult) {
+      if (!active) {
+        condResultText.textContent = 'No session active.';
+        condResult.className = 'cond-result';
+      } else if (humMet && weightMet) {
+        condResultText.textContent = 'Batch is dry - completing session...';
+        condResult.className = 'cond-result result-done';
+      } else {
+        const remaining = [];
+        if (!humMet)    remaining.push(`humidity ${avgH.toFixed(1)}% - target ${tgtH}%`);
+        if (!weightMet) remaining.push(`weight ${curW.toFixed(3)} kg - target ${tgtW.toFixed(3)} kg`);
+        condResultText.textContent = 'Still drying: ' + remaining.join('  -  ');
+        condResult.className = 'cond-result result-drying';
+      }
+    }
+
+    // Weight gauge - dynamic target marker
+    const marker    = document.getElementById('gaugeTargetMarker');
+    const markerLbl = document.getElementById('gaugeTargetLabel');
+    const gaugeMax  = document.getElementById('gaugeMax');
+    if (marker && active && startW > 0) {
+      marker.style.display = '';
+      const maxKg = Math.max(startW * 1.1, 1);
+      const pctPos = Math.min(100, (tgtW / maxKg) * 100);
+      marker.style.left = pctPos.toFixed(1) + '%';
+      if (markerLbl) markerLbl.textContent = tgtW.toFixed(2) + ' kg';
+      if (gaugeMax)  gaugeMax.textContent  = maxKg.toFixed(1) + ' kg';
+    } else if (marker) {
+      marker.style.display = 'none';
+      if (gaugeMax) gaugeMax.textContent = '- kg';
+    }
+  }
+
+  function hookPoll() {
+    const origFetch = window._soliderLiveFetch;
+    if (!origFetch) {
+      setTimeout(hookPoll, 200);
+      return;
+    }
+    window._soliderLiveFetch = async function () {
+      const data = await origFetch();
+      if (data) applyDynamicThresholds(data);
+      return data;
+    };
+  }
+
+  window._applyDynamicThresholds = applyDynamicThresholds;
+  hookPoll();
+
+  // Modal live reduction preview
+  function calcReductionPreview() {
+    const iw  = parseFloat(document.getElementById('f-iw')?.value);
+    const fw  = parseFloat(document.getElementById('f-fw')?.value);
+    const row = document.getElementById('reductionPreviewRow');
+    const val = document.getElementById('reductionPreviewVal');
+    const pct = document.getElementById('reductionPreviewPct');
+    if (!row) return;
+    if (!isNaN(iw) && !isNaN(fw) && iw > 0 && fw >= 0 && fw < iw) {
+      const reduced = iw - fw;
+      const redPct  = (reduced / iw * 100).toFixed(1);
+      row.style.display = '';
+      val.textContent   = reduced.toFixed(3);
+      pct.textContent   = redPct;
+      pct.style.color   = Math.abs(parseFloat(redPct) - 80) <= 10 ? '#4A7C59' : '#c07000';
+    } else {
+      row.style.display = 'none';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('f-iw')?.addEventListener('input', calcReductionPreview);
+    document.getElementById('f-fw')?.addEventListener('input', calcReductionPreview);
+  });
+
+})();
+</script>
+
+</body>
+</html>

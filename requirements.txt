@@ -1,0 +1,7 @@
+flask>=2.3.0
+# Hardware dependencies (comment out if running in simulation mode)
+# adafruit-circuitpython-dht
+# RPi.GPIO
+# hx711
+# luma.oled
+# luma.core

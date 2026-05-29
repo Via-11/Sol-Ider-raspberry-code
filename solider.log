@@ -1,0 +1,920 @@
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.171:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [08/May/2026 14:39:47] "GET /api/live HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 14:39:47] "GET /api/history?days=1 HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 14:39:47] "GET /api/live HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 14:39:47] "GET /api/history?days=1 HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 14:39:47] "GET /api/live HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 14:39:47] "GET /api/history?days=1 HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 14:40:16] "GET /api/live HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 14:40:19] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:40:50] "GET / HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:40:53] "GET /dashboard HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:40:53] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+192.168.8.126 - - [08/May/2026 14:40:53] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+192.168.8.126 - - [08/May/2026 14:40:53] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:40:53] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:01] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:09] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:17] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:23] "GET /api/records?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:23] "GET /api/analysis?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:25] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:29] "GET /api/analysis?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:34] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:34] "GET /api/records?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:34] "GET /api/analysis?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:41] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:49] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:53] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:41:58] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:42:05] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:42:14] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:42:21] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:42:30] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:42:38] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:42:45] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:42:53] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:42:53] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:43:01] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:43:09] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:43:17] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:43:26] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:43:33] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:43:42] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:43:49] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:43:53] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:43:58] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:06] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:13] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:22] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:29] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:34] "GET /dashboard HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:34] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+192.168.8.126 - - [08/May/2026 14:44:34] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+192.168.8.126 - - [08/May/2026 14:44:34] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:34] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:37] "GET /dashboard HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:37] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+192.168.8.126 - - [08/May/2026 14:44:38] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+192.168.8.126 - - [08/May/2026 14:44:38] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:38] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:47] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:55] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:44:59] "GET /api/history?days=3 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:45:01] "GET /api/history?days=7 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:45:02] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:45:10] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:45:17] "GET /api/records?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:45:17] "GET /api/analysis?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:45:18] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:45:23] "GET /api/analysis?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:45:27] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:45:34] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:45:38] "GET /api/history?days=7 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 14:45:40] "GET / HTTP/1.1" 200 -
+172.20.10.9 - - [08/May/2026 15:02:34] "GET / HTTP/1.1" 200 -
+172.20.10.9 - - [08/May/2026 15:02:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.20.10.9 - - [08/May/2026 15:03:25] "GET /dashboard HTTP/1.1" 200 -
+172.20.10.9 - - [08/May/2026 15:03:25] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+172.20.10.9 - - [08/May/2026 15:03:25] "GET /static/js/dashboard.js HTTP/1.1" 200 -
+172.20.10.9 - - [08/May/2026 15:03:25] "GET /api/live HTTP/1.1" 200 -
+172.20.10.9 - - [08/May/2026 15:03:26] "GET /api/history?days=1 HTTP/1.1" 200 -
+172.20.10.9 - - [08/May/2026 15:03:34] "GET /api/live HTTP/1.1" 200 -
+172.20.10.9 - - [08/May/2026 15:03:42] "GET /api/live HTTP/1.1" 200 -
+172.20.10.9 - - [08/May/2026 15:03:49] "GET / HTTP/1.1" 200 -
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+192.168.8.126 - - [08/May/2026 21:20:53] "GET / HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:20:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+192.168.8.126 - - [08/May/2026 21:20:57] "GET /dashboard HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:20:57] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+192.168.8.126 - - [08/May/2026 21:20:57] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+192.168.8.126 - - [08/May/2026 21:20:57] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:20:57] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:21:06] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:21:14] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:21:22] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:21:30] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:21:38] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:21:46] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:21:54] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:21:58] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:22:02] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:22:10] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:24:04] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:24:04] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:24:07] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:24:15] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:24:23] "GET /api/live HTTP/1.1" 200 -
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.171:5000
+[33mPress CTRL+C to quit[0m
+192.168.8.126 - - [08/May/2026 21:24:55] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:25:04] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [08/May/2026 21:25:04] "GET /api/history?days=1 HTTP/1.1" 200 -
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.171:5000
+[33mPress CTRL+C to quit[0m
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.171:5000
+[33mPress CTRL+C to quit[0m
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.171:5000
+[33mPress CTRL+C to quit[0m
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.171:5000
+[33mPress CTRL+C to quit[0m
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.171:5000
+[33mPress CTRL+C to quit[0m
+192.168.8.126 - - [10/May/2026 11:11:44] "GET / HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:11:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+192.168.8.126 - - [10/May/2026 11:11:47] "GET /dashboard HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:11:48] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+192.168.8.126 - - [10/May/2026 11:11:48] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+192.168.8.126 - - [10/May/2026 11:11:49] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:11:49] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:11:57] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:12:07] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:12:21] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:12:33] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:12:41] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:12:48] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:12:56] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:13:00] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:13:05] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:13:13] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:13:20] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:13:29] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:13:37] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:13:45] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:13:52] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:14:01] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:14:01] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:14:09] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:14:17] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:14:25] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:14:33] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:14:42] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:14:49] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:14:57] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:15:02] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:15:05] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:15:20] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:15:21] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:15:29] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:15:37] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:15:45] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:15:53] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:16:01] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:16:01] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:16:09] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:16:17] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:16:25] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:16:33] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:16:42] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:16:49] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:16:57] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:17:02] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:17:05] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:17:13] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:17:27] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:17:30] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:17:41] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:18:04] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:18:22] "GET /api/live HTTP/1.1" 200 -
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.171:5000
+[33mPress CTRL+C to quit[0m
+192.168.8.126 - - [10/May/2026 11:19:58] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:19:58] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:20:06] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:20:16] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:20:22] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:20:29] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:20:29] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:20:37] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:20:38] "POST /api/start_session HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:20:38] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:20:45] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:20:54] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:21:01] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:21:09] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:21:17] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:21:25] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:21:29] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:21:33] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:21:41] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:21:49] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:21:57] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:22:05] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:22:13] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:22:21] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:22:29] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:22:29] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:22:37] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:22:45] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:22:53] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:23:02] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:24:28] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:26:26] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:26:35] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:26:38] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:26:42] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:27:07] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:27:15] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:27:23] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:27:31] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:27:39] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:27:47] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:27:55] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:27:55] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:28:03] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:33:45] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:33:45] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:33:48] "GET /dashboard HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:33:49] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:33:49] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+192.168.8.126 - - [10/May/2026 11:33:49] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+192.168.8.126 - - [10/May/2026 11:33:49] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:33:49] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:33:53] "POST /api/start_session HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:33:53] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:33:57] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:34:05] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:34:14] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:34:22] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:34:30] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:34:38] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:34:46] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:34:50] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:34:54] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:35:02] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:35:11] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:35:18] "GET /api/live HTTP/1.1" 200 -
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.171:5000
+[33mPress CTRL+C to quit[0m
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.171:5000
+[33mPress CTRL+C to quit[0m
+192.168.8.126 - - [10/May/2026 11:53:27] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:53:27] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:53:29] "GET /dashboard HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:53:29] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+192.168.8.126 - - [10/May/2026 11:53:29] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+192.168.8.126 - - [10/May/2026 11:53:29] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:53:29] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:53:30] "GET /api/records?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:53:30] "GET /api/analysis?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:53:38] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:53:45] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:53:53] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:54:01] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:54:12] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:54:18] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:54:21] "GET /api/analysis?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:54:21] "GET /api/records?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:54:25] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:54:29] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:54:34] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:54:41] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:54:50] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:54:58] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:55:06] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:55:14] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:55:22] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:55:30] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:55:30] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:55:38] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 11:55:46] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:06] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:06] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:08] "GET /dashboard HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:08] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+192.168.8.126 - - [10/May/2026 12:15:08] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+192.168.8.126 - - [10/May/2026 12:15:08] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:08] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:16] "POST /api/start_session HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:16] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:17] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:25] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:30] "POST /api/end_session HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:30] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:30] "GET /api/records?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:30] "GET /api/analysis?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:33] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:35] "GET /dashboard HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:35] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+192.168.8.126 - - [10/May/2026 12:15:36] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+192.168.8.126 - - [10/May/2026 12:15:36] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:36] "GET /api/records?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:36] "GET /api/analysis?days=30 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:36] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:44] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:15:52] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:16:00] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:16:09] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:16:16] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:16:24] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:16:33] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:16:40] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:16:43] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:16:51] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:16:59] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:17:08] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:17:27] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:18:16] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:18:39] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:19:05] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:19:05] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:19:23] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:19:35] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:21:05] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:21:09] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:21:12] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:21:16] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:21:37] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:22:10] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:22:33] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:22:41] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:22:49] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:22:57] "GET /api/live HTTP/1.1" 200 -
+[SENSORS] DHT22 Sensor 1 (GPIO 4)  - OK
+[SENSORS] DHT22 Sensor 2 (GPIO 17) - OK
+[SENSORS] HX711 - OK
+[SENSORS] Taring load cell - keep scale EMPTY...
+[SENSORS] Tare complete. Offset: -158420
+[SENSORS] OLED SH1106 - OK
+[SENSORS] All sensors ready. Reading every 10 seconds.
+
+Time          Temp1       H1    Temp2       H2     Weight
+------------------------------------------------------------
+11:52:27       35.4     49.8     35.5     50.3     -0.009
+11:52:43       35.4     49.8     35.5     50.3      0.000
+11:52:58       35.4     49.9     35.5     50.5      1.547
+11:53:13       35.4     50.1     35.5     50.6      1.543
+11:53:28       35.4     50.2     35.5     50.8      1.533
+11:53:44       35.4     50.2     35.5     50.9      0.916
+11:53:59       35.5     50.0     35.5     50.5      0.924
+11:54:15       35.5     49.9     35.5     50.4      0.915
+11:54:30       35.5     49.9     35.6     50.4      0.936
+11:54:45       35.5     50.0     35.6     50.5     -0.019
+11:55:00       35.5     50.4     35.6     50.5     -0.017
+11:55:15       35.5     50.4     35.6     50.5     -0.014
+11:55:31       35.5     50.2     35.6     50.7     -0.014
+11:55:46       35.5     50.9     35.6     50.9     -0.006
+11:56:01       35.5     51.0     35.6     51.0      0.000
+11:56:17       35.5     51.0     35.6     51.1     -0.011
+11:56:32       35.5     50.8     35.7     51.0      1.471
+11:56:47       35.6     51.0     35.7     50.9      1.422
+11:57:02       35.6     50.6     35.7     50.9      0.008
+11:57:18       35.7     50.5     35.7     50.7      1.514
+11:57:33       35.7     50.5     35.8     50.8      1.513
+11:57:49       35.8     50.2     35.8     50.3      0.023
+11:58:04       35.7     50.1     35.8     50.2      1.168
+11:58:19       35.8     50.1     35.8     50.2      1.397
+11:58:34       35.8     49.9     35.8     50.0      1.456
+11:58:49       35.8     50.0     35.9     50.0      1.452
+11:59:05       35.8     49.7     35.9     49.8     -0.091
+11:59:20       35.8     49.5     35.9     49.6      1.476
+11:59:35       35.8     49.3     35.9     49.7      1.394
+11:59:50       35.8     49.0     35.8     49.3     -0.149
+12:00:05       35.7     49.1     35.8     49.3     -0.135
+12:00:20       35.7     49.3     35.8     49.4      0.053
+12:00:36       35.7     49.3     35.8     49.3      0.059
+12:00:51       35.6     49.3     35.7     49.4      0.041
+12:01:06       35.6     49.6     35.7     49.7      1.646
+12:01:21       35.6     49.5     35.6     49.5      1.543
+12:01:36       35.6     49.3     35.7     49.4      1.498
+12:01:52       35.6     49.3     35.6     49.4      1.515
+12:02:07       35.5     49.2     35.6     49.4      0.044
+12:02:22       35.5     49.3     35.6     49.5      0.931
+12:02:37       35.5     49.0     35.6     49.6      0.963
+12:02:52       35.5     49.0     35.5     49.6      0.966
+12:03:08       35.4     49.0     35.5     49.7      0.965
+12:03:23       35.4     49.0     35.5     49.6      0.968
+12:03:38       35.4     49.0     35.5     49.1      0.969
+12:03:53       35.4     49.1     35.5     49.1      0.979
+12:04:08       35.3     49.2     35.5     49.2      0.968
+12:04:24       35.3     49.3     35.4     49.5      0.970
+12:04:39       35.2     49.5     35.4     49.5      0.055
+12:04:54       35.2     49.2     35.3     49.3      0.915
+12:05:09       35.2     49.3     35.3     49.5      0.597
+12:05:24       35.2     49.5     35.3     49.5      0.046
+12:05:39       35.2     49.4     35.3     49.6      0.900
+12:05:55       35.3     49.3     35.4     49.4      0.057
+12:06:10       35.3     49.4     35.4     49.5      0.932
+12:06:25       35.3     50.0     35.4     49.9      0.047
+12:06:40       35.3     49.6     35.4     49.6      0.860
+12:06:55       35.3     49.7     35.4     49.9      0.921
+12:07:11       35.3     49.5     35.4     49.7      0.149
+12:07:26       35.3     49.5     35.4     49.7      0.051
+12:07:41       35.3     49.3     35.4     49.5      0.879
+12:07:56       35.4     48.9     35.4     49.3      0.961
+12:08:11       35.4     48.8     35.5     49.0      0.965
+12:08:27       35.4     48.6     35.4     48.9      0.954
+12:08:42       35.4     48.8     35.4     49.1      0.855
+12:08:57       35.4     48.9     35.4     49.0      0.878
+12:09:12       35.4     49.0     35.4     49.3     -0.007
+12:09:27       35.4     49.3     35.4     49.4      0.000
+12:09:43       35.4     49.3     35.4     49.4      0.000
+12:09:58       35.4     49.2     35.4     49.4      0.009
+12:10:14       35.5     49.6     35.4     49.7      0.000
+12:10:29       35.4     49.7     35.5     49.8     -0.135
+12:10:44       35.5     49.7     35.5     50.0     -0.087
+12:10:59       35.6     49.8     35.5     49.9     -0.107
+12:11:15       35.6     49.6     35.6     50.0     -0.094
+12:11:30       35.6     49.7     35.6     50.1     -0.060
+12:11:45       35.7     49.6     35.7     49.8     -0.094
+12:12:00       35.8     49.4     35.7     49.8      0.112
+12:12:16       35.8     49.6     35.8     49.7      0.170
+12:12:31       35.8     49.5     35.7     49.7      0.181
+12:12:46       35.9     49.4     35.8     49.8      0.170
+12:13:02       35.9     49.4     35.8     49.8      0.186
+12:13:17       35.9     49.3     35.8     49.6      0.186
+12:13:32       35.8     49.1     35.8     49.5      0.178
+12:13:47       35.9     49.1     35.8     49.4      0.186
+12:14:02       35.8     49.2     35.7     49.5      0.235
+12:14:18       35.7     49.2     35.7     49.4      2.474
+12:14:33       35.7     49.2     35.7     49.4      2.473
+12:14:48       35.6     49.5     35.6     49.6      2.489
+12:15:03       35.5     49.7     35.5     49.8      2.468
+[SESSION] Started (manual) | weight: 2.468 kg
+12:15:18       35.5     49.8     35.5     49.9      2.486
+[SESSION] Complete! Reduced -0.018 kg in 0 min. Saved to database.
+12:15:34       35.5     49.7     35.5     49.7      2.474
+12:15:49       35.5     49.4     35.5     49.5      2.469
+12:16:04       35.5     49.5     35.5     49.7      2.466
+12:16:19       35.5     50.1     35.5     49.8      2.464
+12:16:34       35.5     49.1     35.5     49.3      2.469
+12:16:50       35.5     49.1     35.4     49.3      2.472
+12:17:05       35.5     49.1     35.4     49.4      2.475
+12:17:20       35.5     49.1     35.4     49.5      2.478
+12:17:35       35.5     49.1     35.5     49.5      2.478
+12:17:50       35.5     49.5     35.5     49.7      2.477
+12:18:05       35.5     49.3     35.5     49.7      2.486
+12:18:21       35.6     49.3     35.5     49.7      2.483
+12:18:36       35.6     49.4     35.6     49.8      2.484
+12:18:51       35.6     49.4     35.6     49.7      2.490
+12:19:07       35.6     49.1     35.6     49.5      2.497
+12:19:22       35.6     49.1     35.6     49.6      2.496
+12:19:37       35.6     49.3     35.5     49.7      2.494
+12:19:52       35.6     49.3     35.6     49.6      2.498
+12:20:07       35.6     49.3     35.6     49.7      2.516
+12:20:23       35.6     49.3     35.6     49.9      2.532
+12:20:38       35.6     49.8     35.5     49.9      0.252
+12:20:53       35.6     49.7     35.6     50.0      0.257
+12:21:08       35.6     49.8     35.6     50.0      0.255
+12:21:24       35.7     49.4     35.6     49.7      0.229
+12:21:39       35.7     49.2     35.7     49.4      0.185
+12:21:54       36.0     48.8     36.3     48.5      0.140
+12:22:09       36.2     48.5     36.9     47.6      0.130
+12:22:25       36.5     48.0     37.6     46.7      0.132
+12:22:40       36.9     47.5     38.2     45.8      0.160
+12:22:55       37.4     46.6     39.0     44.6      0.177
+12:23:10       37.9     45.8     39.8     43.6      0.179
+12:23:25       38.3     45.1     40.4     42.8      0.193
+12:23:40       38.8     44.6     41.0     42.0      0.188
+12:23:56       39.4     43.7     41.7     41.2      0.190
+12:24:11       39.9     42.9     42.4     40.3      0.197
+12:24:26       40.5     42.0     43.1     39.2      0.209
+12:24:41       41.0     41.2     43.7     38.4      0.212
+12:24:57       41.4     40.7     44.2     37.9      0.203
+12:25:12       42.0     40.1     44.8     37.1      0.219
+12:25:27       42.6     39.3     45.5     36.3      0.225
+12:25:42       43.2     38.3     46.0     35.4      0.220
+12:25:58       43.7     37.5     46.5     34.7      0.208192.168.8.126 - - [10/May/2026 12:31:19] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:31:20] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:31:22] "POST /api/start_session HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:31:23] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:31:24] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:31:34] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:31:40] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:31:48] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:31:56] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:31:56] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:32:04] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:32:16] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:32:21] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:32:29] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:32:37] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:32:45] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:32:53] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:32:57] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:33:01] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:33:09] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:33:17] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:37:10] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:37:10] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:37:16] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:37:18] "GET /dashboard HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:37:19] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+192.168.8.126 - - [10/May/2026 12:37:21] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+192.168.8.126 - - [10/May/2026 12:37:21] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:37:21] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:37:32] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:37:40] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:37:48] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:37:56] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:38:04] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:38:12] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:38:24] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:38:24] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:38:28] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:38:36] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:38:44] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:38:52] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:39:00] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:39:08] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:39:16] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:39:25] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:39:25] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:39:33] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:39:41] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:39:49] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:39:57] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:40:07] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:40:16] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:40:28] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:40:30] "GET /api/history?days=1 HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:40:39] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:40:42] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:40:57] "GET /api/live HTTP/1.1" 200 -
+192.168.8.126 - - [10/May/2026 12:41:02] "GET /api/live HTTP/1.1" 200 -
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.10.2:5000
+[33mPress CTRL+C to quit[0m
+[INFO] Hardware mode - connecting to sensors.
+
+==================================================
+  SOL-IDER
+  Solar Integrated Food Waste Dehydrator
+  Mode: HARDWARE
+==================================================
+
+[DB] Database ready.
+
+[SENSORS] Sensor thread starting...
+
+==================================================
+  Web app is running!
+==================================================
+
+  This Pi         : http://localhost:5000
+  Other devices   : http://<your-pi-ip>:5000
+  Find IP address : hostname -I
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.158.221:5000
+[33mPress CTRL+C to quit[0m
